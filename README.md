@@ -2,13 +2,37 @@ Multi-Agent Sales Automation System
 
 A production-style multi-agent AI system that automates quoting, inventory management, transaction processing, and financial tracking for a paper sales company.
 
-This project demonstrates agent orchestration, state management, tool-based AI design, and database integration.
+This project demonstrates real-world concepts including:
+
+Agent orchestration
+
+Tool-based AI architecture
+
+Database-backed state management
+
+Automated financial tracking
+
+Evaluation-driven system design
 
 🚀 Overview
 
-This system simulates an autonomous AI-powered sales team made up of specialized agents coordinated by an orchestrator.
+This system simulates an autonomous AI-powered sales team composed of specialized agents coordinated by a central orchestrator.
 
-It processes customer quote requests, checks inventory, calculates pricing, completes transactions, updates financial state, and generates business insights.
+The system:
+
+Receives structured quote requests
+
+Validates inventory availability
+
+Generates pricing
+
+Finalizes transactions
+
+Updates financial state
+
+Produces business insights
+
+It is designed to resemble a production-ready backend automation workflow.
 
 🧠 Agent Architecture
 
@@ -18,45 +42,64 @@ The system consists of five specialized agents:
 
 Routes tasks between agents
 
-Manages workflow logic
+Controls workflow logic
 
-Maintains system coordination
+Coordinates system state
 
 2️⃣ Inventory Agent
 
-Tracks product stock levels
+Tracks stock levels
 
-Triggers automatic reorders
+Updates product quantities
 
-Updates database quantities
+Triggers automatic reordering when thresholds are reached
 
 3️⃣ Quoting Agent
 
-Generates customer quotes
+Generates customer pricing
 
 Applies pricing logic
 
-Validates inventory availability
+Validates stock availability before quoting
 
 4️⃣ Sales Agent
 
 Finalizes transactions
 
-Updates cash balance
+Updates company cash balance
 
 Logs completed orders
 
 5️⃣ Business Advisor Agent
 
-Analyzes financial state
+Analyzes financial performance
 
-Provides operational insights
+Generates operational insights
 
-Evaluates company performance
+Evaluates overall company health
+
+🏗 System Architecture
+Customer Request
+        │
+        ▼
+Orchestrator Agent
+        │
+        ├──► Inventory Agent (Check Stock)
+        │
+        ├──► Quoting Agent (Generate Price)
+        │
+        ├──► Sales Agent (Complete Transaction)
+        │
+        ▼
+Business Advisor Agent (Insights & Evaluation)
+
+The system uses a centralized database to maintain persistent inventory and financial state.
+
+See workflowdiagram.png for the visual architecture.
 
 ⚙️ Tech Stack
 
-Python
+Python 3.10+
 
 SQLite
 
@@ -64,16 +107,15 @@ SQLAlchemy
 
 Pydantic
 
-Multi-Agent Orchestration
-
 CSV-based evaluation pipeline
 
 📂 Project Structure
 project_starter.py        # Main multi-agent system implementation
+requirements.txt          # Project dependencies
 test_results.csv          # Evaluation dataset results
 workflowdiagram.png       # System architecture diagram
 Reflectionreport.pdf      # Project analysis and evaluation report
-
+README.md                 # Project documentation
 🔄 System Workflow
 
 Customer quote request is received
@@ -84,66 +126,76 @@ Inventory Agent verifies stock
 
 Quoting Agent generates pricing
 
-Sales Agent finalizes transaction
+Sales Agent completes transaction
 
-Database updates inventory & cash balance
+Inventory and financial state are updated
 
-Business Advisor generates performance insight
-
-See workflowdiagram.png for visual architecture.
+Business Advisor generates insight
 
 📊 Evaluation
 
-Tested using structured CSV quote requests
+The system was evaluated using structured CSV-based quote requests.
 
-Dynamic inventory updates validated
+Validated features:
 
-Automatic reordering logic triggered successfully
+Dynamic inventory updates
 
-Financial state updated after each transaction
+Automatic reorder logic
 
-System passed evaluation rubric
+Financial state tracking
 
-▶️ How to Run
+Transaction logging
 
-Clone the repository:
+End-to-end workflow execution
 
+All functional requirements were successfully tested.
+
+▶️ Installation & Setup
+1️⃣ Clone the Repository
 git clone https://github.com/sanjeet207/Multi-Agent-Sales-Automation.git
+cd Multi-Agent-Sales-Automation
+2️⃣ Create Virtual Environment (Recommended)
+python -m venv venv
 
+Activate:
 
-Install dependencies:
+Windows:
 
+venv\Scripts\activate
+
+Mac/Linux:
+
+source venv/bin/activate
+3️⃣ Install Dependencies
 pip install -r requirements.txt
-
-
-Run:
-
+4️⃣ Run the System
 python project_starter.py
-
 💡 What This Project Demonstrates
 
-Multi-agent orchestration
+Multi-agent orchestration design
 
-Tool-based AI architecture
+Modular AI architecture
 
-Database-backed state management
+Database-backed state persistence
 
-Financial logic integration
+Financial logic automation
 
-Evaluation-driven AI system design
+Evaluation-driven engineering
 
-Modular, production-style structuring
+Production-style Python structuring
 
 📈 Future Improvements
 
-Add REST API interface
+REST API interface (FastAPI integration)
 
-Deploy as web service
+Web dashboard for financial visualization
 
-Add dashboard for financial visualization
+Containerization using Docker
 
-Containerize with Docker
+Real-time analytics reporting
+
+Cloud deployment
 
 📜 License
 
-MIT License
+This project is licensed under the MIT License.
